@@ -5,15 +5,17 @@ class BannerScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(150),
-      child: Container(
-        color: Theme.of(context).primaryColor,
-        child: const Row(
+    return Container(
+      width: double.infinity,
+      height: 900,
+      color: Theme.of(context).primaryColor,
+      child:  Padding(
+        padding:  const EdgeInsets.all(150),
+        child:  Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Expanded(
+            const Expanded(
               flex: 3,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -27,7 +29,7 @@ class BannerScreen extends StatelessWidget {
             ),
             Expanded(
               flex: 2,
-              child: Text('Animated here')),
+              child: Image.asset('/images/banner_image.jpg', scale: 1,)),
           ],
         ),
       ),
