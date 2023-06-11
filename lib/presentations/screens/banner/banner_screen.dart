@@ -1,7 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:portafolio_flutter/presentations/screens/login/login_screen.dart';
 
 class BannerScreen extends StatelessWidget {
   const BannerScreen({super.key});
+
+  void _mostrarFormularioFlotante(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return const AlertDialog(
+        title:  Text('Iniciar Sesión', textAlign: TextAlign.center,),
+        titlePadding: EdgeInsets.only(top: 50),
+        contentPadding: EdgeInsets.all(30),
+        content:  SizedBox(
+          width: 450,
+          height: 250,
+          child: LoginScreen()),
+  
+      );
+    },
+  );
+}
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +34,24 @@ class BannerScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Expanded(
+             Expanded(
               flex: 3,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Kharold Canova', style: TextStyle(fontSize: 100, fontWeight: FontWeight.w300),),
-                  SizedBox(height: 10),
-                  Text('Desarrollador Frontend Flutter', style: TextStyle(fontSize: 25),)
+                  const Text('Kharold Canova', style: TextStyle(fontSize: 100, fontWeight: FontWeight.w300),),
+                  const SizedBox(height: 10),
+                  const Text('Desarrollador Frontend Flutter', style: TextStyle(fontSize: 25),),
+                  const SizedBox(height: 30,),
+                  SizedBox(
+                    width: 250,
+                    height: 50,
+                    child: FilledButton(
+                      onPressed: (){
+                        _mostrarFormularioFlotante(context);
+                      },
+                    child: const Text('Contactame')))
                 ],
               ),
             ),

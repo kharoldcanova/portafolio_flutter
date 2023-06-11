@@ -14,7 +14,7 @@ class AppBarScreen extends StatelessWidget implements PreferredSizeWidget {
       toolbarHeight: 100.0,
       actions: [
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(20),
           child: Row(
             children: [
               FilledButton(
