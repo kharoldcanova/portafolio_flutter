@@ -1,26 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portafolio_flutter/presentations/screens/login/login_screen.dart';
 
 class BannerScreen extends StatelessWidget {
   const BannerScreen({super.key});
 
-  void _mostrarFormularioFlotante(BuildContext context) {
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return const AlertDialog(
-        title:  Text('Iniciar Sesión', textAlign: TextAlign.center,),
-        titlePadding: EdgeInsets.only(top: 50),
-        contentPadding: EdgeInsets.all(30),
-        content:  SizedBox(
-          width: 450,
-          height: 250,
-          child: LoginScreen()),
-  
-      );
-    },
-  );
-}
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +31,7 @@ class BannerScreen extends StatelessWidget {
                     height: 50,
                     child: FilledButton(
                       onPressed: (){
-                        _mostrarFormularioFlotante(context);
+                        
                       },
                     child: const Text('Contactame')))
                 ],
