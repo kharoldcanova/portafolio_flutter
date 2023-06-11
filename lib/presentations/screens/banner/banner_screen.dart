@@ -13,16 +13,21 @@ class BannerScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Kharold Canova', style: TextStyle(fontSize: 100, fontWeight: FontWeight.w300),),
-                SizedBox(height: 10),
-                Text('Desarrollador Frontend Flutter', style: TextStyle(fontSize: 25),)
-              ],
+            Expanded(
+              flex: 3,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Kharold Canova', style: TextStyle(fontSize: 100, fontWeight: FontWeight.w300),),
+                  SizedBox(height: 10),
+                  Text('Desarrollador Frontend Flutter', style: TextStyle(fontSize: 25),)
+                ],
+              ),
             ),
-            Text('Animated here'),
+            Expanded(
+              flex: 2,
+              child: Text('Animated here')),
           ],
         ),
       ),
