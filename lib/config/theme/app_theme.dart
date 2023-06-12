@@ -12,7 +12,7 @@ class AppTheme {
   ThemeData getLightTheme() => ThemeData(
     useMaterial3: true,
     brightness: Brightness.light,
-    colorSchemeSeed: Colors.grey[700],
+    colorSchemeSeed: Colors.blueAccent[700],
     textTheme: textTheme,
   );
 

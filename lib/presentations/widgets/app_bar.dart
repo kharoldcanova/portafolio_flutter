@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portafolio_flutter/config/theme/app_theme.dart';
 import 'package:portafolio_flutter/presentations/providers/theme_provider.dart';
 import 'package:portafolio_flutter/presentations/screens/login/login_screen.dart';
 import 'package:provider/provider.dart';
@@ -27,7 +26,6 @@ class AppBarScreen extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Provider.of<ThemeProvider>(context);
 
     return AppBar(
       title: const Text(
