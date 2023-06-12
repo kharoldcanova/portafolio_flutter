@@ -8,8 +8,16 @@ class AppTheme {
 
     )
   );
-  //theme function
-  ThemeData getTheme() => ThemeData(
+  //theme function light
+  ThemeData getLightTheme() => ThemeData(
+    useMaterial3: true,
+    brightness: Brightness.light,
+    colorSchemeSeed: Colors.grey[700],
+    textTheme: textTheme,
+  );
+
+  //theme function light
+  ThemeData getDarkTheme() => ThemeData(
     useMaterial3: true,
     brightness: Brightness.dark,
     colorSchemeSeed: Colors.blueAccent[700],
