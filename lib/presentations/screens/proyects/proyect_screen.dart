@@ -24,7 +24,12 @@ class ProyectScreen extends StatelessWidget {
             child: ListView.builder(
               itemCount: 5,
               itemBuilder: (context, index) {
-                return const ProyectItemCard();
+                return const ProyectItemCard(
+                  name: 'Login Flutter',
+                  description: 'Un login basico realizado en Flutter',
+                  linkUrl: 'https://github.com/kharoldcanova/traductorBasico',
+                  language: 'Flutter',
+                );
               },
             ),
           ),
@@ -35,7 +40,18 @@ class ProyectScreen extends StatelessWidget {
 }
 
 class ProyectItemCard extends StatelessWidget {
-  const ProyectItemCard({super.key});
+  const ProyectItemCard(
+      {super.key,
+      required this.name,
+      required this.description,
+      required this.linkUrl,
+      required this.language});
+
+  //
+  final String name;
+  final String description;
+  final String linkUrl;
+  final String language;
 
   @override
   Widget build(BuildContext context) {
