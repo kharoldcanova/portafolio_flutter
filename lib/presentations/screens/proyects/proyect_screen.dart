@@ -13,7 +13,7 @@ class ProyectScreen extends StatelessWidget {
         children: [
           const Text(
             'Trabajos realizados',
-            style: TextStyle(fontSize: 32),
+            style: TextStyle(fontSize: 42),
           ),
           const SizedBox(height: 20),
           const Text(

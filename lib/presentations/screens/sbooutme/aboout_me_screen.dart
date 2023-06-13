@@ -17,12 +17,18 @@ class AboutMeScreen extends StatelessWidget {
           ),
           SizedBox(height: 20),
           Text(
-            '¡Hola!, mi nombre es Kharold Canova, soy Desarrollador Frontend  con experiencia en Flutter',
-            style: TextStyle(fontSize: 32),
+            '¡Hola!, mi nombre es Kharold Canova',
+            style: TextStyle(fontSize: 20),
           ),
           SizedBox(height: 20),
-          ListTile(
-            title: Text('Experiencia'),
+          Text(
+            'Me desempeño como desarrollador Frontend de Flutter.',
+            style: TextStyle(fontSize: 20),
+          ),
+          SizedBox(height: 20),
+          Text(
+            'Llevo alrededor de dos años usando este hermoso framework de Dart',
+            style: TextStyle(fontSize: 20),
           ),
         ],
       ),

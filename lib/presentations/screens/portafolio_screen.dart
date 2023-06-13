@@ -23,7 +23,7 @@ class _PortafolioScreenState extends State<PortafolioScreen> {
         children: [
           AppNavigationRail(
             selectedIndex: _selectedIndex,
-            changed: ( index) {
+            changed: (index) {
               setState(() {
                 _selectedIndex = index;
               });
@@ -42,7 +42,9 @@ class _PortafolioScreenState extends State<PortafolioScreen> {
         return const BannerScreen();
       case 1:
         return const ProyectScreen();
-      case 2:
+      case 3:
+        return const AboutMeScreen();
+      case 4:
         return const AboutMeScreen();
       default:
         return Container();
