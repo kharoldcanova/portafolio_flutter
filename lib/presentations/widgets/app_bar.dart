@@ -28,6 +28,8 @@ class AppBarScreen extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
 
     return AppBar(
+      elevation: 0,
+      scrolledUnderElevation: 0,
       title: const Text(
         'Portafolio',
       ),
