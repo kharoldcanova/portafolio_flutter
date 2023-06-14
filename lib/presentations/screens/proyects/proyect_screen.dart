@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portafolio_flutter/domain/entities/proyect.dart';
 import 'package:portafolio_flutter/presentations/providers/proyect_provider.dart';
+import 'package:portafolio_flutter/presentations/widgets/dialog_proyect.dart';
 import 'package:provider/provider.dart';
 
 class ProyectScreen extends StatelessWidget {
@@ -32,10 +33,7 @@ class ProyectScreen extends StatelessWidget {
                 final Proyect proyect = proyectProvider.proyects[index];
 
                 return ProyectItemCard(
-                  name: proyect.name,
-                  description: proyect.description,
-                  linkUrl: proyect.linkUrl,
-                  language: proyect.language,
+                  proyect: proyect,
                 );
               },
             ),
@@ -47,33 +45,31 @@ class ProyectScreen extends StatelessWidget {
 }
 
 class ProyectItemCard extends StatelessWidget {
-  const ProyectItemCard(
-      {super.key,
-      required this.name,
-      required this.description,
-      required this.linkUrl,
-      required this.language});
+  const ProyectItemCard({
+    super.key,
+    required this.proyect,
+  });
 
   //
-  final String name;
-  final String description;
-  final String linkUrl;
-  final String language;
+  final Proyect proyect;
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: Padding(
+        child: Padding(
         padding: const EdgeInsets.all(15),
-        child: ListTile(
-            // selectedColor: Theme.of(context).colorScheme.secondary,
-            // selected: true,
-            leading: const Icon(Icons.work),
-            title: Text(name),
-            subtitle: Text(description),
-            trailing: IconButton(
-                onPressed: () {}, icon: const Icon(Icons.visibility))),
-      ),
+          child: ListTile(
+              // selectedColor: Theme.of(context).colorScheme.secondary,
+              // selected: true,
+              leading: const Icon(Icons.work),
+              title: Text(proyect.name),
+              subtitle: Text(proyect.description),
+              trailing: IconButton(
+                  onPressed: () {
+                    showProyectCard(context, proyect);
+                  },
+                  icon: const Icon(Icons.visibility))),
+        ),
     );
   }
 }

@@ -1,28 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:portafolio_flutter/presentations/providers/theme_provider.dart';
 import 'package:portafolio_flutter/presentations/screens/login/login_screen.dart';
+import 'package:portafolio_flutter/presentations/widgets/dialog_login.dart';
 import 'package:provider/provider.dart';
 
 class AppBarScreen extends StatelessWidget implements PreferredSizeWidget {
   const AppBarScreen({Key? key}) : super(key: key);
 
-  //show dialog login
-  void _mostrarFormularioFlotante(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return const AlertDialog(
-          title: Text(
-            'Iniciar Sesión',
-            textAlign: TextAlign.center,
-          ),
-          titlePadding: EdgeInsets.only(top: 50),
-          contentPadding: EdgeInsets.all(30),
-          content: SizedBox(width: 450, height: 250, child: LoginScreen()),
-        );
-      },
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +34,7 @@ class AppBarScreen extends StatelessWidget implements PreferredSizeWidget {
             children: [
               FilledButton(
                   onPressed: () {
-                    _mostrarFormularioFlotante(context);
+                    showFloatingForm(context, const LoginScreen());
                   },
                   child: const Text('Iniciar Sesion')),
             ],
