@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:portafolio_flutter/domain/entities/proyect.dart';
+import 'package:portafolio_flutter/presentations/providers/proyect_provider.dart';
+import 'package:provider/provider.dart';
 
 class ProyectScreen extends StatelessWidget {
   const ProyectScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final proyectProvider = context.watch<ProyectProvider>();
+
     return Padding(
       padding: const EdgeInsets.all(50),
       child: Column(
@@ -24,11 +29,13 @@ class ProyectScreen extends StatelessWidget {
             child: ListView.builder(
               itemCount: 5,
               itemBuilder: (context, index) {
-                return const ProyectItemCard(
-                  name: 'Login Flutter',
-                  description: 'Un login basico realizado en Flutter',
-                  linkUrl: 'https://github.com/kharoldcanova/traductorBasico',
-                  language: 'Flutter',
+                final Proyect proyect = proyectProvider.proyects[index];
+
+                return ProyectItemCard(
+                  name: proyect.name,
+                  description: proyect.description,
+                  linkUrl: proyect.linkUrl,
+                  language: proyect.language,
                 );
               },
             ),
@@ -62,9 +69,8 @@ class ProyectItemCard extends StatelessWidget {
             // selectedColor: Theme.of(context).colorScheme.secondary,
             // selected: true,
             leading: const Icon(Icons.work),
-            title: const Text('Login con Flutter'),
-            subtitle: const Text(
-                'Un login básico realizado con Flutter usando los servicios de Firebase Authentication'),
+            title: Text(name),
+            subtitle: Text(description),
             trailing: IconButton(
                 onPressed: () {}, icon: const Icon(Icons.visibility))),
       ),

@@ -1,4 +1,4 @@
-import 'package:portafolio_flutter/domain/proyect.dart';
+import 'package:portafolio_flutter/domain/entities/proyect.dart';
 
 class ProyectModel {
   final String name;
@@ -27,6 +27,6 @@ class ProyectModel {
         "language": language,
       };
 
-  Proyect toMessageEntity() =>
+  Proyect toProyectEntity() =>
       Proyect(name: name, description: description, linkUrl: linkUrl, language: language);
 }

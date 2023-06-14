@@ -1,4 +1,4 @@
-List<Map<String, dynamic>> proyectItem = [
+List<Map<String, dynamic>> proyectsItems = [
   {
     'name': 'Contador basico',
     'description': 'Un proyecto que expone el uso de Statefull Widget para gestionar el estado de la aplicacion.',
