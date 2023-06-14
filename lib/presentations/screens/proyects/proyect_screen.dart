@@ -27,7 +27,7 @@ class ProyectScreen extends StatelessWidget {
           const SizedBox(height: 20),
           Expanded(
             child: ListView.builder(
-              itemCount: 5,
+              itemCount: proyectProvider.proyects.length,
               itemBuilder: (context, index) {
                 final Proyect proyect = proyectProvider.proyects[index];
 
