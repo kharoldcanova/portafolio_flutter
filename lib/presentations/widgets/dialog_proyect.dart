@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portafolio_flutter/domain/entities/proyect.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'dart:ui_web' as platformViewRegistry;
 
 Future<void> _launchURL(String url) async {
   if (!await launchUrl(Uri.parse(url))) {

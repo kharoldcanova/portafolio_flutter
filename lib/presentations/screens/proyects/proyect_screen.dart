@@ -3,7 +3,6 @@ import 'package:portafolio_flutter/domain/entities/proyect.dart';
 import 'package:portafolio_flutter/presentations/providers/proyect_provider.dart';
 import 'package:portafolio_flutter/presentations/widgets/dialog_proyect.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class ProyectScreen extends StatelessWidget {
   const ProyectScreen({super.key});
