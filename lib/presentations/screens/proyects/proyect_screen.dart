@@ -3,6 +3,7 @@ import 'package:portafolio_flutter/domain/entities/proyect.dart';
 import 'package:portafolio_flutter/presentations/providers/proyect_provider.dart';
 import 'package:portafolio_flutter/presentations/widgets/dialog_proyect.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProyectScreen extends StatelessWidget {
   const ProyectScreen({super.key});
@@ -44,7 +45,7 @@ class ProyectScreen extends StatelessWidget {
   }
 }
 
-class ProyectItemCard extends StatelessWidget {
+class ProyectItemCard extends StatefulWidget {
   const ProyectItemCard({
     super.key,
     required this.proyect,
@@ -54,21 +55,29 @@ class ProyectItemCard extends StatelessWidget {
   final Proyect proyect;
 
   @override
+  State<ProyectItemCard> createState() => _ProyectItemCardState();
+}
+
+class _ProyectItemCardState extends State<ProyectItemCard> {
+  @override
   Widget build(BuildContext context) {
     return Card(
-        child: Padding(
+      child: Padding(
         padding: const EdgeInsets.all(15),
-          child: ListTile(
-              // selectedColor: Theme.of(context).colorScheme.secondary,
-              // selected: true,
-              title: Text(proyect.name),
-              subtitle: Text(proyect.description),
-              trailing: IconButton(
-                  onPressed: () {
-                    showProyectCard(context, proyect);
-                  },
-                  icon: const Icon(Icons.visibility))),
-        ),
+        child: ListTile(
+            // selectedColor: Theme.of(context).colorScheme.secondary,
+            // selected: true,
+            title: Text(widget.proyect.name),
+            subtitle: Text(widget.proyect.description),
+            trailing: IconButton(
+                onPressed: () {
+                  showProyectCard(
+                    context,
+                    widget.proyect,
+                  );
+                },
+                icon: const Icon(Icons.visibility))),
+      ),
     );
   }
 }
