@@ -32,8 +32,6 @@ class _AppNavigationRailState extends State<AppNavigationRail> {
           NavigationRailDestination(
               icon: Icon(Icons.work_history), label: Text('Proyectos')),
           NavigationRailDestination(
-              icon: Icon(Icons.chat_outlined), label: Text('Chatbot')),
-          NavigationRailDestination(
               icon: Icon(Icons.person_pin_circle_rounded), label: Text('Sobre mi')),
         ],
         selectedIndex: widget.selectedIndex);

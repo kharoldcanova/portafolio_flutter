@@ -42,9 +42,7 @@ class _PortafolioScreenState extends State<PortafolioScreen> {
         return const BannerScreen();
       case 1:
         return const ProyectScreen();
-      case 3:
-        return const AboutMeScreen();
-      case 4:
+      case 2:
         return const AboutMeScreen();
       default:
         return Container();

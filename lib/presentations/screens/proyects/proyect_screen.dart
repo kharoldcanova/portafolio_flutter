@@ -61,7 +61,6 @@ class ProyectItemCard extends StatelessWidget {
           child: ListTile(
               // selectedColor: Theme.of(context).colorScheme.secondary,
               // selected: true,
-              leading: const Icon(Icons.work),
               title: Text(proyect.name),
               subtitle: Text(proyect.description),
               trailing: IconButton(
