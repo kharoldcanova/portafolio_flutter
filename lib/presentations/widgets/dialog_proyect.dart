@@ -9,16 +9,51 @@ Future<void> _launchURL(String url) async {
 }
 
 void showProyectCard(BuildContext context, Proyect proyect) {
+  const styleTitle = TextStyle(fontWeight: FontWeight.w800);
   showDialog(
     context: context,
     builder: (context) {
       return AlertDialog(
-        icon: const Icon(Icons.work),
-        titlePadding: const EdgeInsets.only(top: 50),
+        titlePadding: const EdgeInsets.all(30),
         title: Text(proyect.name),
         contentPadding: const EdgeInsets.all(30),
-        content: ListTile(
-          subtitle: Text(proyect.description),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Nombre del proyecto: ',
+                  style: styleTitle,
+                ),
+                Flexible(child: Text(proyect.name))
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Lenguaje de programacion: ',
+                  style: styleTitle,
+                ),
+                Flexible(child: Text(proyect.language))
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Descripcion: ',
+                  style: styleTitle,
+                ),
+                Flexible(child: Text(proyect.description))
+              ],
+            )
+          ],
         ),
         actions: [
           FilledButton(
